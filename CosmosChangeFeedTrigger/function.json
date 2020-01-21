@@ -1,0 +1,25 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "type": "cosmosDBTrigger",
+      "name": "documentsin",
+      "direction": "in",
+      "leaseCollectionName": "leases",
+      "connectionStringSetting": "AzureCosmosDBConnectionString",
+      "databaseName": "streaming-etl-cosmos",
+      "collectionName": "creation",
+      "createLeaseCollectionIfNotExists": "true"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "documentsout",
+      "databaseName": "streaming-etl-cosmos",
+      "collectionName": "target",
+      "createIfNotExists": "true",
+      "connectionStringSetting": "AzureCosmosDBConnectionString"
+      
+    }
+  ]
+}
