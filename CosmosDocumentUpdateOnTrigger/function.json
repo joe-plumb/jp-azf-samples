@@ -1,0 +1,26 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "hourdocin",
+      "type": "cosmosDBTrigger",
+      "databaseName": "streaming-etl-cosmos",
+      "collectionName": "creation",
+      "sqlQuery" : "SELECT * FROM c WHERE c.id == {id}",
+      "connectionStringSetting": "AzureCosmosDBConnectionString",
+      "direction": "in",
+      "leaseCollectionName": "leases",
+      "createLeaseCollectionIfNotExists": "true",
+      "LeaseCollectionPrefix": "hour"
+  },
+  {
+      "name": "hourdocout",
+      "type": "cosmosDB",
+      "databaseName": "streaming-etl-cosmos",
+      "collectionName": "hourview",
+      "createIfNotExists": true,
+      "connectionStringSetting": "AzureCosmosDBConnectionString",
+      "direction": "out"
+  }
+  ]
+}
