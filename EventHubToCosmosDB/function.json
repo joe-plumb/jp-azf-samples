@@ -1,0 +1,23 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "event",
+      "direction": "in",
+      "eventHubName": "samples-eventhub",
+      "connection": "AzureEventHubsReadConnectionString",
+      "cardinality": "one",
+      "consumerGroup": "$Default"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "fromeventhub",
+      "databaseName": "dev-db",
+      "collectionName": "fromeventhub",
+      "createIfNotExists": "true",
+      "connectionStringSetting": "AzureCosmosDBConnectionString"
+    }
+  ]
+}
