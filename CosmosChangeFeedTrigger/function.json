@@ -7,16 +7,16 @@
       "direction": "in",
       "leaseCollectionName": "leases",
       "connectionStringSetting": "AzureCosmosDBConnectionString",
-      "databaseName": "streaming-etl-cosmos",
-      "collectionName": "creation",
+      "databaseName": "dev-db",
+      "collectionName": "fromeventhub",
       "createLeaseCollectionIfNotExists": "true"
     },
     {
       "type": "cosmosDB",
       "direction": "out",
       "name": "documentsout",
-      "databaseName": "streaming-etl-cosmos",
-      "collectionName": "target",
+      "databaseName": "dev-db",
+      "collectionName": "fromchangefeed",
       "createIfNotExists": "true",
       "connectionStringSetting": "AzureCosmosDBConnectionString"
       

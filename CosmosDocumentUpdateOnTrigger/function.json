@@ -4,8 +4,8 @@
     {
       "name": "hourdocin",
       "type": "cosmosDBTrigger",
-      "databaseName": "streaming-etl-cosmos",
-      "collectionName": "creation",
+      "databaseName": "dev-db",
+      "collectionName": "fromeventhub",
       "sqlQuery" : "SELECT * FROM c WHERE c.id == {id}",
       "connectionStringSetting": "AzureCosmosDBConnectionString",
       "direction": "in",
@@ -16,8 +16,8 @@
   {
       "name": "hourdocout",
       "type": "cosmosDB",
-      "databaseName": "streaming-etl-cosmos",
-      "collectionName": "hourview",
+      "databaseName": "dev-db",
+      "collectionName": "change-feed-value-add",
       "createIfNotExists": true,
       "connectionStringSetting": "AzureCosmosDBConnectionString",
       "direction": "out"
